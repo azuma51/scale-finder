@@ -24,5 +24,9 @@ Thanks.
 * add Pentatonic from JAZZ
 * add Reference lists
 * add Open Tunings
+* cookies, save latest status
 * idea; Piano diagram
 * idea; Paint shape (3NPS, CAGED) but...THIS IS DIFFICULTY
+
+# History
+##### r20180331 TEST-Release

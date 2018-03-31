@@ -12,8 +12,8 @@ var Settings = {};
 Settings.key = 0;
 Settings.fret = 15+1;
 Settings.lang = 'ja'
-Settings.level = 'adv'//'beg' //or 'adv'
-Settings.ghost = true;//false;
+Settings.level = 'beg' //or 'adv'
+Settings.ghost = false;
 
 var Data = {};
 var Scaels = {};
