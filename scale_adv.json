@@ -1,0 +1,333 @@
+{
+    "scales": [
+        {
+            "name": "Pentatonic",
+            "scales": [
+                {
+                    "name": "Major Pentatonic",
+                    "symbol": "M(9,13)",
+                    "degree": ["R","2","3","5","6"],
+                    "ghost": ["4","7"],
+                    "desc-en": "Major scale without 4th and 7th.",
+                    "desc-ja": "Major Scale 4, 7抜き."
+                },                
+                {
+                    "name": "Minor Pentatonic",
+                    "symbol": "m7(11)",
+                    "degree": ["R","b3","4","5","b7"],
+                    "ghost": ["2","b6"],
+                    "desc-en": "Natural minor scale without 2nd and 6th.",
+                    "desc-ja": "Natural Minor 2, b6抜き"
+                }
+            ]
+        },
+
+      
+
+        {
+            "name": "Greek Mode",
+            "scales": [
+                {
+                    "mode": "I",
+                    "name": "Ionian <small>/ Major</small>",
+                    "symbol": "M7(9,11,13)",
+                    "degree": ["R","2","3","4","5","6","7"],
+                    "cnote": ["11"],
+                    "desc-en": "Also known as Major scale.<br>Lower 7=>b7, Mixolydian.",
+                    "desc-ja": "7=>b7 半音下げると Mixolydian"
+                },
+                {
+                    "mode": "II",
+                    "name": "Dorian",
+                    "symbol": "m7(9,11,13)",
+                    "degree": ["R","2","b3","4","5","6","b7"],
+                    "cnote": ["13"],
+                    "desc-en": "Lower 6=>b6, Aeolian.",
+                    "desc-ja": "6=>b6 半音下げると Aeolian"
+                },
+                {
+                    "mode": "III",
+                    "name": "Phrygian",
+                    "symbol": "m7(b9,11,b13)",
+                    "degree": ["R","b2","b3","4","5","b6","b7"],
+                    "cnote": ["b9"],
+                    "desc-en": "Lower 5=>b5, Locrian.",
+                    "desc-ja": "5=>b5 半音下げると Locrian"
+                },
+                {
+                    "mode": "IV",
+                    "name": "Lydian",
+                    "symbol": "M7(9,#11,13)",
+                    "degree": ["R","2","3","#4","5","6","7"],
+                    "cnote": ["#11"],
+                    "desc-en": "Raise the 4th of the Ionian.<br>Lower #4=>4, Ionian.",
+                    "desc-ja": "Ionianの4を半音上げたもの<br>#4=>4 半音下げると Ionian"
+                },
+                {
+                    "mode": "V",
+                    "name": "Mixolydian",
+                    "symbol": "7(9,11,13)",
+                    "degree": ["R","2","3","4","5","6","b7"],
+                    "cnote": ["b7"],
+                    "desc-en": "Lower 3=>b3, Dorian.",
+                    "desc-ja": "3=>b3 半音下げると Dorian"
+                },                
+                {
+                    "mode": "VI",
+                    "name": "Aeolian <small>/ Natural Minor</small>",
+                    "symbol": "m7(9,11,b13)",
+                    "degree": ["R","2","b3","4","5","b6","b7"],
+                    "cnote": ["b13"],
+                    "desc-en": "Also known as Natural Minor scale.<br>Lower 2=>b2, Phrygian.",
+                    "desc-ja": "2=>b2 半音下げると Phrygian"
+                },
+                {
+                    "mode": "VII",
+                    "name": "Locrian",
+                    "symbol": "m7(b5, b9,11,b13)",
+                    "degree": ["R","b2","b3","4","b5","b6","b7"],
+                    "cnote": ["b5"],
+                    "desc-en": "Lower R=>half step, Lydian under the semitone.",
+                    "desc-ja": "Rを半音下げると、半音階下の Lydian"
+                }                
+            ]
+        },
+
+        {
+            "name": "Melodic Minor Mode",
+            "scales": [
+                {
+                    "mode": "I",
+                    "name": "Melodic Minor ",
+                    "symbol": "mM7(9,11,13)",
+                    "degree": ["R","2","b3","4","5","6","7"],
+                    "cnote": ["b3"],
+                    "desc-en": "Lower 3=>b3 of Ionian.<br>Or rise b6=>6 b7=>7 of Natural minor<br>Or rise b7=>7 of Dorian.",
+                    "desc-ja": "Natural Minor b6=>6 b7=>7 半音上げたもの。<br>または、Major scale 3=>b3, Dorian b7=>7"
+                },
+                {
+                    "mode": "II",
+                    "name": "Dorian b2 / Phrygian♮6",
+                    "symbol": "m7(b9,11,13)",
+                    "degree": ["R", "b2", "b3", "4", "5", "6", "b7"],
+                    "desc": "Alias: Assyrian, or Phrygidorian."
+                },
+                {
+                    "mode": "III",
+                    "name": "Lydian #5 (Lydian augmented)",
+                    "symbol": "augM7(9,#11,13)",
+                    "degree": ["R","2","3","#4","#5","6","7"],
+                    "desc": ""
+                },
+                {
+                    "mode": "IV",
+                    "name": "Lydian b7 (Lydian dominant)",
+                    "symbol": "7(9,#11,13)",
+                    "degree": ["R","2","3","#4","5","6","b7"],
+                    "desc": "Alias: Mixolydian #4, Acoustic scale, Overtone, or Lydomyxian."
+                },
+                {
+                    "mode": "V",
+                    "name": "Mixolydian b6",
+                    "symbol": "7(9,11,b13)",
+                    "degree": ["R","2","3","4","5","b6","b7"],
+                    "desc": "Alias: Melodic major, Hindu, or Mixaeolian"
+                },
+                {
+                    "mode": "VI",
+                    "name": "Locrian ♮2 (Half diminished)",
+                    "symbol": "m7(b5,9,11,b13)",
+                    "degree": ["R","2","b3","4","b5","b6","b7"],
+                    "desc": "Alias: Aeolian diminished, or Aeolocrian."
+                },
+                {
+                    "mode": "VII",
+                    "name": "Super Locrian (Altered dominant)",
+                    "symbol": "7(b5,b9,#9,b13)",
+                    "degree": ["R","b2","b3","b4","b5","b6","b7"],
+                    "desc-en": "",
+                    "desc-ja": "b4=3と解釈してVII(b5)としオルダートを導き出すのが一般的、らしい"
+                }
+            ]
+        },
+
+        {
+            "name": "Harmonic Minor Mode",
+            "scales": [
+                {
+                    "mode": "I",
+                    "name": "Harmonic Minor",
+                    "symbol": "mM7(9,11,b13)",
+                    "degree": ["R","2","b3","4","5","b6","7"],
+                    "cnote": ["7"],
+                    "ghost": ["b7"],
+                    "desc-en": "Rise b7=>7 of Aeolian.",
+                    "desc-ja": "Natural Minor b7=>7 半音上げたもの"
+                },
+                {
+                    "mode": "II",
+                    "name": "Locrian♮6",
+                    "symbol": "m7(b5,b9,11,13)",
+                    "degree": ["R","b2","b3","4","b5","6","b7"],
+                    "cnote": ["6"],
+                    "ghost": ["b6"],
+                    "desc": "Rise b6=>6 of Locrian"
+                },
+                {
+                    "mode": "III",
+                    "name": "Ionian #5",
+                    "symbol": "augM7(9,11,13)",
+                    "degree": ["R","2","3","4","#5","6","7"],
+                    "cnote": ["#5"],
+                    "ghost": ["5"],
+                    "desc": "Rise 5=>#5 of Ionian"
+                },
+                {
+                    "mode": "IV",
+                    "name": "Dorian #4",
+                    "symbol": "m7(9,#11,13)",
+                    "degree": ["R","2","b3","#4","5","6","b7"],
+                    "cnote": ["#4"],
+                    "ghost": ["4"],
+                    "desc": "Rise 4=>#4 of Dorian."
+                },
+                {
+                    "mode": "V",
+                    "name": "Phrygian #3 <small>(Phrygian dominant / Harmonic Minor P5 below)</small>",
+                    "symbol": "7(b9,11,b13)",
+                    "degree": ["R","b2","3","4","5","b6","b7"],
+                    "cnote": ["3"],
+                    "ghost": ["b3"],
+                    "desc": "Rise b3=>3 of Phrygian."
+                },
+                {
+                    "mode": "VI",
+                    "name": "Lydian #2",
+                    "symbol": "M7(#9,#11,13)",
+                    "degree": ["R","#2","3","#4","5","6","7"],
+                    "cnote": ["#2"],
+                    "ghost": ["2"],
+                    "desc": "Rise 2=>#2 of Lydian."
+                },
+                {
+                    "mode": "VII",
+                    "name": "Super Locrian bb7 (Altered bb7)",
+                    "symbol": "dim7(b9,b11,b13)",
+                    "degree": ["R","b2","b3","b4","b5","b6","bb7"],
+                    "cnote": ["bb7"],
+                    "desc": "Rise 7th to root of Mixolydian."
+                }
+            ]
+        },
+
+
+        {
+            "name": "Harmonic Major Mode",
+            "scales": [
+                {
+                    "mode": "I",
+                    "name": "Harmonic Major / Ionian b6",
+                    "symbol": "M7(9,11,b13)",
+                    "degree": ["R","2","3","4","5","b6","7"],
+                    "cnote": ["b6"],
+                    "ghost": ["6"],
+                    "desc": "Lower 6=>b6 of Ionian."
+                },
+                {
+                    "mode": "II",
+                    "name": "Dorian b5",
+                    "symbol": "m7(b5,9,11,13)",
+                    "degree": ["R","2","b3","4","b5","6","b7"],
+                    "cnote": ["b5"],
+                    "ghost": ["5"],
+                    "desc": "Lower 5=>b5 of Dorian."
+                },
+                {
+                    "mode": "III",
+                    "name": "Phrygian b4",
+                    "symbol": "m7(b9,#9,b13)",
+                    "degree": ["R","b2","b3","b4","5","b6","b7"],
+                    "cnote": ["3"],
+                    "ghost": ["4"],
+                    "desc": "Lower 4=>b4(M3) of Phrygian."
+                },
+                {
+
+                    "mode": "IV",
+                    "name": "Lydian b3",
+                    "symbol": "mM7(9,#11,13)",
+                    "degree": ["R","2","b3","#4","5","6","7"],
+                    "cnote": ["b3"],
+                    "ghost": ["3"],
+                    "desc": "Lower 3=>b3 of Lydian."
+                },
+                {
+                    "mode": "V",
+                    "name": "Mixolydian b2",
+                    "symbol": "7(b9,11,13)",
+                    "degree": ["R","b2","3","4","5","6","b7"],
+                    "cnote": ["b9"],
+                    "ghost": ["2"],
+                    "desc": "Lower 2=>b2 of Mixolydian."
+                },
+                {
+                    "mode": "VI",
+                    "name": "Lydian augmented #2",
+                    "symbol": "augM7(#9,#11,13)",
+                    "degree": ["R","#2","3","#4","#5","6","7"],
+                    "desc": "Lower root of Aeolian"
+                },
+                {
+                    "mode": "VII",
+                    "name": "Locrian bb7",
+                    "symbol": "dim7(b9,11,b13)",
+                    "degree": ["R","b2","b3","4","b5","b6","bb7"],
+                    "cnote": ["bb7"],
+                    "ghost": ["b7"],
+                    "desc": "Lower b7=>bb7 of Locrian."
+                }
+            ]
+        },
+        
+
+        {
+            "name": "Symmetrical",
+            "scales": [
+                {
+                    "name": "Diminished Whole-Half",
+                    "symbol": "",
+                    "degree": ["R","2","b3","4","b5","b6","6","7"],
+                    "desc": "Octatonic & Symmetrical"
+                },
+                {
+                    "name": "Diminished Half-Whote",
+                    "symbol": "",
+                    "degree": ["R","b2","b3","3","#4","5","6","b7"],
+                    "desc": "Octatonic & Symmetrical."
+                },
+                {
+                    "name": "Augmented",
+                    "symbol": "",
+                    "degree": ["R","#2","3","5","#5","7"],
+                    "desc-en": "Hexatonic, This one isn't quite as symmetrical as the whole-tone scales.<br>Combination of two augmented triads(Ex: CEG# + EbGB)",
+                    "desc-ja": "Hexatonic, 正確には、対称的なSymmetricalスケールではありません。<br>二つのオーギュメントトライアド(R3#5)を組み合わせたものです(Ex: CEG# + EbGB)"
+                },
+                {
+                    "name": "Whole-tone",
+                    "symbol": "",
+                    "degree": ["R","2","3","#4","#5","b7"],
+                    "desc-en": "Hexatonic & Symmetrical.<br><q>If you experiment with this scale using a clean tone and lots of reverb, the results may well remind you of piano music by the likes of Dobussy, Ravel and Satie.</q><br><cite>Creative Guitar 2</cite> by Guthrie Govan",
+                    "desc-ja": "Hexatonic & Symmetrical.<br><q>クリーントーンにリバーブをめいっぱいかけてこのスケールを試すと、ドビュッシーやラヴェル、サティのようなピアノ曲を思い出すかもしれません。</q><br><cite>Creative Guitar 2</cite> by Guthrie Govan"
+                },
+                {
+                    "name": "Chromatic",
+                    "symbol": "",
+                    "degree": ["R","b2","2","b3","3","4","b5","5","b6","6","b7","7"],
+                    "desc-en": "With twelve notes, each a semitone.",
+                    "desc-ja": "半音階スケール、隣り合う音の音程関係がすべて半音"                    
+                }
+            ]
+        }
+
+    ]
+}
