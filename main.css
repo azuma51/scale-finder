@@ -1,0 +1,295 @@
+:root {
+    --color-black: #57607c;
+    --color-blue: #74b1be;
+    --color-blue-2: rgb(175,209,216);
+    --color-gray-2: #dee2e6;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    --font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--color-black);
+}
+
+a {
+    color: var(--color-blue);
+}
+a:hover {
+    color: var(--color-blue);
+}
+
+p { margin-bottom: 0rem; }
+
+/*BS4 Mod*/
+/*
+.btn-outline-secondary:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    background-color: var(--dark);
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active {
+    --background-color: pink;
+}
+*/
+
+
+
+/* Nav */
+
+.navbar {
+    --padding: 0.5rem 1rem;
+    padding: 4px;
+}
+
+/* Nav > Status */
+.status {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    padding: 2px 3px;
+    line-height: 1.35rem;
+}
+.status:hover {
+    color: var(--color-black);
+    border-color: var(--color-blue);
+    background-color: var(--light);
+}
+.status-degree {}
+.status-note {
+    font-size: 0.85rem;
+    width: 2.5rem;
+}
+
+button:not(:disabled):not(.disabled).status.active {
+    color: white;
+    border-color: var(--color-blue);
+    background-color: var(--color-blue);
+}
+
+.chlang {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 5px;
+}
+.chlang-button {
+    font-size: 0.75rem;
+    padding: 0.2rem;
+    opacity: 0.8;
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+.chlang-button:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    background-color: var(--dark);
+    opacity: 1;  
+}
+
+/* Nav > Advanced */
+
+#Tuning {
+    width: 11rem;
+}
+#Fret {
+    width: 5rem;
+}
+#Level {
+    width: 7rem;
+}
+
+/* Nav > Info */
+
+.info {}
+.info p { margin-bottom: 2px; }
+.info i { font-size: 2rem; }
+.info a { color: var(--color-black); }
+.info a:hover { color: var(--color-blue); }
+.info .copyright { font-size: 0.8rem; }
+
+
+/* Scales */
+#Scales {
+    max-width: 750px;
+}
+
+/* Scales > category */
+.category { margin-top: 1rem; }
+.category i {
+    width: 2.1rem;
+    margin-left: 0.2rem;
+}
+.category .fa::before {
+    content: "\f07c";    
+}
+.category .collapsed .fa::before {
+    content: "\f07b";
+}
+.category-title {}
+
+/* Scales > scale */
+.scale.list-group-item {
+    color: var(--color-black);
+    padding: .75rem 1.25rem;
+    --padding: .5rem 1rem;
+}
+.scale.list-group-item:first-of-type {
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem    
+}
+.scale.list-group-item:last-child {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem    
+}
+.scale.list-group-item.pinned {
+    color: white;
+    border-color: var(--color-blue-2);
+    background-color: var(--color-blue-2);
+}
+.scale.list-group-item.active {
+    color: white;
+    border-color: var(--color-blue);
+    background-color: var(--color-blue);
+}
+
+.scale-title {}
+.scale-title-premode {
+    margin-right: 0.5rem;
+}
+.scale-title-prefix {}
+.scale-symbol {}
+.scale-desc { line-height: 1.5rem; }
+
+
+
+/* Boards */
+
+.board {
+    padding: 2px;
+    border-top: 1px solid var(--color-gray-2);
+}
+.board-header p {
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+.board-pin {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    transform: rotate(-30deg);
+}
+.board-pin:hover {
+    color: var(--color-blue);
+    cursor: pointer;
+    --transform: rotate(0deg);
+}
+.pinned.board-pin {
+    color: var(--color-blue);
+    transform: rotate(0deg);
+}
+.pinned.board-pin:hover {}
+.board-close {}
+
+
+/* .diagram */
+.diagram {
+    overflow: scroll;
+    --margin: 2px;
+}
+.diagram table {
+    margin: 0 auto;
+    vertical-align: middle;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.diagram table th {
+    font-size: 80%;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+}
+.diagram table td {
+    background-image: url(bg_dot.png);
+    background-repeat: repeat-x;
+    background-position-y: 50%;
+
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    padding: 1px 5px;
+}
+.diagram table caption {
+    caption-side: top;
+    padding-top: 0.25rem;
+    text-align: left;
+    display: none;
+}
+.diagram table td.zero-fret {
+    border-left: 0px;
+    border-right: 3px solid gray;
+}
+.diagram table td.twelve-fret,
+.diagram table td.twenty-four-fret {
+    border-right: 3px solid gray;
+}
+
+.diagram .maru {
+    display: inline-flex;
+    flex-wrap: row nowrap;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    vertical-align: top;
+
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    
+    width: 1.8rem;
+    height: 1.8rem;
+
+    font-size: 1rem;
+    line-height: 0.7rem;    
+}
+.diagram table .maru.root {
+    color: red;
+    border-color: red;
+    font-weight: bold;
+}
+.diagram table .maru.cnote {
+    color: green;
+    border-color: green;
+}
+.diagram table .maru.ghost {
+    --color: gray;
+    --border-color: gray;
+    opacity: 0.20;
+}
+.diagram .maru.trans {
+    color: transparent;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.diagram-degrees .maru:not(.trans) .small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.diagram-notes .maru:not(.trans) .small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+
+
+/*
+body :lang(ja) {
+    display: none;
+}
+*/

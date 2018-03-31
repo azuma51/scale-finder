@@ -1,0 +1,35 @@
+{
+    "comments": "do not use E#, Fb, B#, Cb",
+    "define_notes": [
+        "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"
+    ],
+
+    "comments": "do not use #3, #6, #7",
+    "comments": "should not be able to use b11, #13",
+    "define_degrees": [
+        ["R", "r", "1", "P1", "8", "P8"],
+        ["b2", "m2",         "b9"],
+        ["2", "M2",           "9"],
+        ["b3", "m3", "#2",    "#9"],
+        ["3", "M3",  "b4",  "b11"],
+        ["4", "P4",          "11"],
+        ["b5", "m5", "#4",  "#11"],
+        ["5", "P5"],
+        ["b6", "m6", "#5",  "b13"],
+        ["6", "M6", "bb7",  "13"],
+        ["b7", "m7",        "#13"],
+        ["7", "M7"]        
+    ],
+
+    "types": [
+        { "name": "normal", "degrees": ["R","b2","2","b3","3","4","b5","5", "b6", "6", "b7", "7"]},
+        { "name": "tension", "degrees": ["R","b9","9","b3","3","11","#11","5","b13","13","b7","7"]}      
+    ],
+
+    "tuning": [
+        { "name": "Regular", "notes": ["E","A","D","G","B","E"] },
+        { "name": "DropD",   "notes": ["D","A","D","G","B","E"] },
+        { "name": "7S-STD",  "notes": ["B","E","A","D","G","B","E"] },
+        { "name": "4S-Bass", "notes": ["E","A","D","G"] }
+    ]
+}

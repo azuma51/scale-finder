@@ -1,0 +1,221 @@
+{
+    "scales": [
+        {
+            "name": "Pentatonic",
+            "scales": [
+                {
+                    "name": "Major Pentatonic",
+                    "symbol": "M(9,13)",
+                    "degree": ["R","2","3","5","6"],
+                    "ghost": ["4","7"],
+                    "desc-en": "Major scale without 4th and 7th.",
+                    "desc-ja": "Major Scale 4, 7抜き."
+                },                
+                {
+                    "name": "Minor Pentatonic",
+                    "symbol": "m7(11)",
+                    "degree": ["R","b3","4","5","b7"],
+                    "ghost": ["2","b6"],
+                    "desc-en": "Natural minor scale without 2nd and 6th.",
+                    "desc-ja": "Natural Minor 2, b6抜き"
+                }
+            ]
+        },
+
+        {
+            "name": "Pentatonic+α",
+            "scales": [
+                {
+                    "name": "Major Pentatonic + b3 (Major Blues scale)",
+                    "symbol": "",
+                    "degree": ["R","2","b3","3","5","6"],
+                    "cnote": ["b3"],
+                    "ghost": ["4","7"],
+                    "desc-en": "Major pentatonic with blue note b3.",
+                    "desc-ja": "Major pentatonic + b3(blue note)"
+                },                
+                {
+                    "name": "Minor Pentatonic + b5 (Minor Blues scale)",
+                    "symbol": "",
+                    "degree": ["R","b3","4","b5","5","b7"],
+                    "cnote": ["b5"],
+                    "ghost": ["2","b6"],
+                    "desc-en": "Minor pentatonic with blue note b5.",
+                    "desc-ja": "Minor pentatonic + b5(blue note)"
+                },
+
+                {
+                    "name": "Major Pentatonic + #4 <small>(Lydian character)</small>",
+                    "symbol": "",
+                    "degree": ["R","2","3","#4","5","6"],
+                    "cnote": ["#4"],
+                    "ghost": ["4","7"],
+                    "desc-en": "Lydian characteristic note #4.",
+                    "desc-ja": "Lydianの特性音 #4"
+                },                
+                {
+                    "name": "Major Pentatonic + 4 <small>(Ionian character)</small>",
+                    "symbol": "",
+                    "degree": ["R","2","3","4","5","6"],
+                    "cnote": ["4"],
+                    "ghost": ["7"],
+                    "desc-en": "Ionian characteristic note 4",
+                    "desc-ja": "Ionianの特性音 4"
+                },                
+                {
+                    "name": "Major Pentatonic + b7 <small>(Mixolydian character)</small>",
+                    "symbol": "",
+                    "degree": ["R","2","3","5","6","b7"],
+                    "cnote": ["b7"],
+                    "ghost": ["4","7"],
+                    "desc-en": "Mixolydian characteristic note b7.",
+                    "desc-ja": "Mixolydianの特性音 b7"
+                },                
+                
+                {
+                    "name": "Minor Pentatonic + 6 <small>(Dorian character)</small>",
+                    "symbol": "",
+                    "degree": ["R","b3","4","5","6","b7"],
+                    "cnote": ["6"],
+                    "ghost": ["2","b6"],
+                    "desc-en": "Dorian characteristic note 6.",
+                    "desc-ja": "Dorianの特性音 6"
+                },
+                {
+                    "name": "Minor Pentatonic + b6 <small>(Aeolian character)</small>",
+                    "symbol": "",
+                    "degree": ["R","b3","4","5","b6","b7"],
+                    "cnote": ["b6"],
+                    "ghost": ["2"],
+                    "desc-en": "Aeolian characteristic note b6.",
+                    "desc-ja": "Aeolianの特性音 b6"
+                },
+                {
+                    "name": "Minor Pentatonic + b2 <small>(Phrygian character)</small>",
+                    "symbol": "",
+                    "degree": ["R","b2","b3","4","5","b7"],
+                    "cnote": ["b2"],
+                    "ghost": ["2","b6"],
+                    "desc-en": "Phrygian characteristic note b2.",
+                    "desc-ja": "Phrygianの特性音 b2"
+                },
+                {
+                    "name": "Minor Pentatonic + b5 <small>(Locrian character) = Minor Blues scale</small>",
+                    "symbol": "",
+                    "degree": ["R","b3","4","b5","5","b7"],
+                    "cnote": ["b5"],
+                    "ghost": ["2","b6"],
+                    "desc-en": "Locrian characteristic note b5.",
+                    "desc-ja": "Locrianの特性音 b5"
+                }
+            ]
+        },
+
+        {
+            "name": "Greek Mode",
+            "scales": [
+                {
+                    "mode": "IV",
+                    "name": "Lydian",
+                    "symbol": "M7(9,#11,13)",
+                    "degree": ["R","2","3","#4","5","6","7"],
+                    "cnote": ["#11"],
+                    "desc-en": "Raise the 4th of the Ionian.<br>Lower #4=>4, Ionian.",
+                    "desc-ja": "Ionianの4を半音上げたもの<br>#4=>4 半音下げると Ionian"
+                },
+                {
+                    "mode": "I",
+                    "name": "Ionian <small>/ Major</small>",
+                    "symbol": "M7(9,11,13)",
+                    "degree": ["R","2","3","4","5","6","7"],
+                    "cnote": ["11"],
+                    "desc-en": "Also known as Major scale.<br>Lower 7=>b7, Mixolydian.",
+                    "desc-ja": "7=>b7 半音下げると Mixolydian"
+                },
+                {
+                    "mode": "V",
+                    "name": "Mixolydian",
+                    "symbol": "7(9,11,13)",
+                    "degree": ["R","2","3","4","5","6","b7"],
+                    "cnote": ["b7"],
+                    "desc-en": "Lower 3=>b3, Dorian.",
+                    "desc-ja": "3=>b3 半音下げると Dorian"
+                },                
+                {
+                    "mode": "II",
+                    "name": "Dorian",
+                    "symbol": "m7(9,11,13)",
+                    "degree": ["R","2","b3","4","5","6","b7"],
+                    "cnote": ["13"],
+                    "desc-en": "Lower 6=>b6, Aeolian.",
+                    "desc-ja": "6=>b6 半音下げると Aeolian"
+                },
+                {
+                    "mode": "VI",
+                    "name": "Aeolian <small>/ Natural Minor</small>",
+                    "symbol": "m7(9,11,b13)",
+                    "degree": ["R","2","b3","4","5","b6","b7"],
+                    "cnote": ["b13"],
+                    "desc-en": "Also known as Natural Minor scale.<br>Lower 2=>b2, Phrygian.",
+                    "desc-ja": "2=>b2 半音下げると Phrygian"
+                },
+                {
+                    "mode": "III",
+                    "name": "Phrygian",
+                    "symbol": "m7(b9,11,b13)",
+                    "degree": ["R","b2","b3","4","5","b6","b7"],
+                    "cnote": ["b9"],
+                    "desc-en": "Lower 5=>b5, Locrian.",
+                    "desc-ja": "5=>b5 半音下げると Locrian"
+                },
+                {
+                    "mode": "VII",
+                    "name": "Locrian",
+                    "symbol": "m7(b5, b9,11,b13)",
+                    "degree": ["R","b2","b3","4","b5","b6","b7"],
+                    "cnote": ["b5"],
+                    "desc-en": "Lower R=>half step, Lydian under the semitone.",
+                    "desc-ja": "Rを半音下げると、半音階下の Lydian"
+                }                
+            ]
+        },
+
+        {
+            "name": "Melodic / Harmonic Minor",
+            "scales" : [
+                {
+                    "name": "Melodic Minor ",
+                    "symbol": "mM7(9,11,13)",
+                    "degree": ["R","2","b3","4","5","6","7"],
+                    "cnote": ["b3"],
+                    "ghost": ["3"],
+                    "desc-en": "Lower 3=>b3 of Ionian.<br>Or rise b6=>6 b7=>7 of Natural minor<br>Or rise b7=>7 of Dorian.",
+                    "desc-ja": "Major scale 3=>b3 半音下げたもの<br>または、Natural Minor b6=>6, b7=>7 半音上げたもの<br>または、Dorian b7=>7 半音上げたもの"
+                },
+                {
+                    "name": "Harmonic Minor",
+                    "symbol": "mM7(9,11,b13)",
+                    "degree": ["R","2","b3","4","5","b6","7"],
+                    "cnote": ["7"],
+                    "ghost": ["b7"],
+                    "desc-en": "Rise b7=>7 of Aeolian.",
+                    "desc-ja": "Natural Minor b7=>7 半音上げたもの"
+                }
+            ]
+        },
+
+        {
+            "name": "Other",
+            "scales" : [
+                {
+                    "name": "Chromatic",
+                    "symbol": "",
+                    "degree": ["R","b2","2","b3","3","4","b5","5","b6","6","b7","7"],
+                    "desc-en": "With twelve notes, each a semitone.",
+                    "desc-ja": "半音階スケール、隣り合う音の音程関係がすべて半音"                    
+                }
+            ]
+        }
+        
+    ]
+}

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <style>
+        body {
+            margin-bottom: 500px;
+        }
+    </style>
+    
+    <title>Scale Finder</title>
+</head>
+<body>
+
+
+    <nav class="navbar sticky-top bg-dark">
+        <div class="w-100">    
+
+
+            <div class="chlang">
+                <button id="Btn-Lang" class="btn btn-outline-secondary btn-sm chlang-button">ja/en</button>
+            </div>
+            
+            <!-- #Status -->
+            <div id="Status" class="text-center">
+                <div class="btn-group">
+                    <button class="btn btn-outline-light status active" type="button" value="0">
+                        <span class="status-degree">R</span><br/><div class="status-note"><span>C<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="1">
+                        <span class="status-degree">b2</span><br/><div class="status-note"><span>C#/Db<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="2">
+                        <span class="status-degree">2</span><br/><div class="status-note"><span>D<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="3">
+                        <span class="status-degree">b3</span><br/><div class="status-note"><span>D#/Eb<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="4">
+                        <span class="status-degree">3</span><br/><div class="status-note"><span>E<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="5">
+                        <span class="status-degree">4</span><br/><div class="status-note"><span>F<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="6">
+                        <span class="status-degree">b5</span><br/><div class="status-note"><span>F#/Gb<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="7">
+                        <span class="status-degree">5</span><br/><div class="status-note"><span>G<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="8">
+                        <span class="status-degree">b6</span><br/><div class="status-note"><span>G#/Ab<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="9">
+                        <span class="status-degree">6</span><br/><div class="status-note"><span>A<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="10">
+                        <span class="status-degree">b7</span><br/><div class="status-note"><span>A#/Bb<span></div>
+                    </button>
+                    <button class="btn btn-outline-light status" type="button" value="11">
+                        <span class="status-degree">7</span><br/><div class="status-note"><span>B<span></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- #Controls -->
+            <div class="w-100 text-center mt-1">
+                <div id="Controls" class="d-inline-flex">
+
+                    <select id="Type" class="form-control form-control-sm">
+                        <option value="normal">Normal</option>
+                        <option value="tension">Tension</option>
+                        <option value="scale">Scale</option>
+                    </select>
+
+                    <select id="Key" class="form-control form-control-sm ml-2">
+                        <option value="0">C</option>
+                        <option value="1">C#/Db</option>
+                        <option value="2">D</option>
+                        <option value="3">D#/Eb</option>
+                        <option value="4">E</option>
+                        <option value="5">F</option>
+                        <option value="6">F#/Gb</option>
+                        <option value="7">G</option>
+                        <option value="8">G#/Ab</option>
+                        <option value="9">A</option>
+                        <option value="10">A#/Bb</option>
+                        <option value="11">B</option>
+                    </select>
+
+                    <div id="Chord" class="btn-group btn-group-sm ml-1" role="group">
+                        <button class="btn btn-secondary btn-sm" value="1,3,5,7">M7</button>
+                        <button class="btn btn-secondary btn-sm" value="1,b3,5,b7">m7</button>
+                        <button class="btn btn-secondary btn-sm," value="1,3,5,b7">7</button>
+                        <button class="btn btn-secondary btn-sm" value="1,b3,b5,b7">m7(b5)</button>
+                    </div>
+
+                    <div class="btn-group ml-1" role="group">
+                        <!--
+                        <span data-toggle="collapse" data-target="#DegreeBoard">
+                            <button id="Btn-Degree" type="button" class="btn btn-outline-success btn-sm" data-toggle="button">Degree</button>
+                        </span>
+                        <-->
+                        <button id="Btn-Degree" type="button" class="btn btn-outline-secondary btn-sm active">Degree</button>
+                        <button id="Btn-Note" type="button" class="btn btn-outline-secondary btn-sm">Note</button>                    
+                    </div>
+                    
+                    <div class="btn-group ml-1" role="group">
+                        <!--
+                        <span data-toggle="collapse" data-target="#Advanced">
+                            <button id="Btn-Advanced" type="button" class="btn btn-outline-warning btn-sm active" data-toggle="button">ADV</button>
+                        </span>
+                        <span data-toggle="collapse" data-target="#Info">
+                                <button id="Btn-Info" type="button" class="btn btn-outline-warning btn-sm active" data-toggle="button">INFO</button>
+                            </span>
+                        -->
+                        <button id="Btn-Advanced" type="button" class="btn btn-outline-secondary btn-sm">ADV</button>
+                        <button id="Btn-Info" type="button" class="btn btn-outline-secondary btn-sm">INFO</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <!-- #Advanced -->
+            <div class="w-100 text-center">
+                <div id="Advanced" class="collapse --show">
+
+                    <div class="d-inline-flex mt-2">
+                        <select id="Tuning" class="form-control form-control-sm">
+                            <option value="Regular">Regular (E,A,D,G,B,E)</option>
+                            <option value="DropD">DropD (D,A,D,G,B,E)</option>
+                            <option value="7S-STD">7S-STD (B,E,A,D,G,B,E)</option>
+                        </select>
+
+                        <input id="Fret" class="form-control form-control-sm ml-2" type="number" value="24" min="12" max="32">
+                        
+                        <select id="Level" class="form-control form-control-sm ml-2">
+                            <option value="beg">Beginner</option>
+                            <!-- option value="int">Intermediate</option> -->
+                            <option value="adv">Advanced</option>
+                        </select>
+
+                        <div class="form-check ml-2">
+                            <input id="Check-ghost" type="checkbox" class="form-check-input">
+                            <label class="form-check-label pt-1">ghost</label>
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- #Info -->
+            <div class="w-100 text-center">
+                <div id="Info" class="collapse --show">
+
+                    <div class="info mt-2">
+                        <p>
+                            <a href="https://github.com/azuma51/scale-finder" title="Source code on Github"><i class="fab fa-github-square"></i></a>
+                            <!--
+                            <a href="#"><i class="far fa-comments"></i></a>
+                            <a href="#"><i class="fas fa-paperclip"></i></a>
+                            <a href="#" title="Refarence Links"><i class="fas fa-link"></i></a>
+                            -->
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fazuma51.github.io%2Fscale-finder%2F" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fazuma51.github.io%2Fscale-finder%2F" target="_blank" title="Share on Tweet"><i class="fab fa-twitter-square"></i></a>                                           
+                        </p>
+                        <p class="copyright">Scale Finder r20180331</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <!-- Scales -->
+    <div id="Scales" class="container">
+
+        <a class="anchor" id="Pentatonic-anchor"></a>
+        <section class="category">
+            <a data-toggle="collapse" href="#Pentatonic-group">
+                <h4 class="category-title"><i class="fa"></i>Pentatonic</h4>
+            </a>
+
+            <div id="Pentatonic-group" class="category-scales collapse show">
+
+                <a class="anchor" id="Major-Pentatonic-anchor"></a>
+                <div id="Major-Pentatonic" class="scale list-group-item list-group-item-action flex-column">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="scale-title">Major Pentatonic</h5>
+                        <h5 class="scale-symbol">M(9,13)</h5>
+                    </div>
+                    <h5 class="scale-degrees">R, 2, 3, 5, 6</h5>
+                    <p class="scale-desc">Major Scale 4, 7 抜き</p>
+                </div>
+
+                <a class="anchor" id="Minor-Pentatonic-anchor"></a>
+                <div id="Minor-Pentatonic" class="scale list-group-item list-group-item-action flex-column">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="scale-title">Minor Pentatonic</h5>
+                        <h5 class="scale-symbol">m7(11)</h5>
+                    </div>
+                    <h5 class="scale-degrees">R, b3, 4, 5, b7</h5>
+                    <p class="scale-desc">Natural Scale 2, 6 抜き</p>
+                </div>
+                
+            </div>
+
+        </section>
+        
+
+        <a class="anchor" id="Harmonic-Minor-Mode-anchor"></a>
+        <section class="category">
+            <a data-toggle="collapse" href="#Harmonic-Minor-Mode-group">
+                <h4 class="category-title"><i class="fa"></i>Harmonic Minor Mode</h4>
+            </a>
+
+            <div id="Harmonic-Minor-Mode-group" class="category-scales collapse show">
+
+                <a class="anchor" id="Harmonic-Minor-anchor"></a>
+                <div id="Harmonic-Minor" class="scale list-group-item list-group-item-action flex-column pinned">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="scale-title"><span class="scale-title-premode">I.</span>Harmonic Minor</h5>
+                        <h5 class="scale-symbol">mM(9,11,b13)</h5>
+                    </div>
+                    <h5 class="scale-degrees">R, 2, b3, 4, 5, b6, 7</h5>
+                    <p class="scale-desc">1st of Harmonic Minor Mode<br>Natural Minor b7を半音上げたもの</p>
+                </div>
+
+                <a class="anchor" id="Phrygian-anchor"></a>
+                <div id="Phrygian" class="scale list-group-item list-group-item-action flex-column active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="scale-title"><span class="scale-title-premode">V.</span>Phrygian #3<small>(Phrygian Dominant / Harmonic Minor P5 below)</small></h5>
+                        <h5 class="scale-symbol">7(b9,11,b13)</h5>
+                    </div>
+                    <h5 class="scale-degrees">R, b2, 3, 4, 5, b6, b7</h5>
+                    <p class="scale-desc">5th of Harmonic Minor Mode</p>
+                </div>
+                
+            </div>
+
+        </section>
+
+    </div>   
+
+
+
+    <!-- #Boards -->
+    <div id="Boards" class="fixed-bottom">
+
+
+        <div id="DegreeBoard" class="container-fuild bg-light collapse board --show">
+            <div class="d-flex justify-content-between pl-3 pr-3 board-header">
+                <p>
+                    <i class="fa fas fa-thumbtack board-pin"></i>
+                    <span class="board-title-key">C</span>
+                    <span class="board-title">Chromatic</span>
+                    <small>on Degree</small>
+                </p>
+                <button type="button" class="close board-close" data-target="#DegreeBoard">
+                    <span class="" aria-hidden="true">&times;</span>
+                </button>   
+            </div>
+
+            <div id="" class="diagram">
+                <div class="diagram-degrees text-center">
+                    <table>
+                        <caption></caption>
+                        <tr>
+                            <th></th>
+                            <th>0</th>
+                            <th></th>
+                            <th></th>
+                            <th>3</th>
+                            <th></th>
+                            <th>5</th>
+                            <th></th>
+                            <th>7</th>
+                            <th></th>
+                            <th>9</th>
+                            <th></th>
+                            <th></th>
+                            <th>12</th>
+                            <th></th>
+                            <th></th>
+                            <th>15</th>
+                            <th></th>
+                            <th>17</th>
+                            <th></th>
+                            <th>19</th>
+                            <th></th>
+                            <th>21</th>
+                            <th></th>
+                            <th></th>
+                            <th>24</th>
+                        </tr>
+
+                        <tr>
+                            <th>1</th>
+                            <td class="zero-fret"><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>4#</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span class="small">b13</span></div></td>
+                            <td><div class="maru"><span>13</span></div></td>
+                            <td><div class="maru"><span class="small">#13</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>3</span></div></td>
+                        </tr>
+                        
+                        <tr>
+                            <th>2</th>
+                            <td class="zero-fret"><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>7</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>3</th>
+                            <td class="zero-fret"><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>5</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>4</th>
+                            <td class="zero-fret"><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>2</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>5</th>
+                            <td class="zero-fret"><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>6</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>6</th>
+                            <td class="zero-fret"><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>3</span></div></td>
+                            <td><div class="maru"><span>4</span></div></td>
+                            <td><div class="maru"><span>b5</span></div></td>
+                            <td><div class="maru"><span>5</span></div></td>
+                            <td><div class="maru"><span>b6</span></div></td>
+                            <td><div class="maru"><span>6</span></div></td>
+                            <td><div class="maru"><span>b7</span></div></td>
+                            <td><div class="maru"><span>7</span></div></td>
+                            <td><div class="maru root"><span>R</span></div></td>
+                            <td><div class="maru"><span>b2</span></div></td>
+                            <td><div class="maru"><span>2</span></div></td>
+                            <td><div class="maru"><span>b3</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>3</span></div></td>
+                        </tr>
+                         
+                        <tr>
+                            <th></th>
+                            <th>12</th>
+                            <th></th>
+                            <th></th>
+                            <th>15</th>
+                            <th></th>
+                            <th>17</th>
+                            <th></th>
+                            <th>19</th>
+                            <th></th>
+                            <th>21</th>
+                            <th></th>
+                            <th></th>
+                            <th>24</th>
+                            <th></th>
+                            <th></th>
+                            <th>27</th>
+                            <th></th>
+                            <th>29</th>
+                            <th></th>
+                            <th>31</th>
+                            <th></th>
+                            <th>33</th>
+                            <th></th>
+                            <th></th>
+                            <th>36</th>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    
+
+        <div id="NoteBoard" class="container-fuild bg-light collapse board --show">
+            <div class="d-flex justify-content-between pl-3 pr-3 board-header">
+                <p>
+                    <i class="fa fas fa-thumbtack board-pin"></i>
+                    <span class="board-title-key">C</span>
+                    <span class="board-title">Chromatic</span>
+                    <small>on Note</small>
+                </p>
+                <button type="button" class="close board-close" data-target="#NoteBoard">
+                    <span class="" aria-hidden="true">&times;</span>
+                </button>   
+            </div>
+
+            <div id="" class="diagram">
+                <div class="diagram-notes text-center">
+                    <table>
+                        <caption></caption>
+                        <tr>
+                            <th></th>
+                            <th>0</th>
+                            <th></th>
+                            <th></th>
+                            <th>3</th>
+                            <th></th>
+                            <th>5</th>
+                            <th></th>
+                            <th>7</th>
+                            <th></th>
+                            <th>9</th>
+                            <th></th>
+                            <th></th>
+                            <th>12</th>
+                            <th></th>
+                            <th></th>
+                            <th>15</th>
+                            <th></th>
+                            <th>17</th>
+                            <th></th>
+                            <th>19</th>
+                            <th></th>
+                            <th>21</th>
+                            <th></th>
+                            <th></th>
+                            <th>24</th>
+                        </tr>
+
+                        <tr>
+                            <th>1</th>
+                            <td class="zero-fret"><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>E</span></div></td>
+                        </tr>
+                        
+                        <tr>
+                            <th>2</th>
+                            <td class="zero-fret"><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>B</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>3</th>
+                            <td class="zero-fret"><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>G</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>4</th>
+                            <td class="zero-fret"><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>D</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>5</th>
+                            <td class="zero-fret"><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>A</span></div></td>
+                        </tr>                    
+
+                        <tr>
+                            <th>6</th>
+                            <td class="zero-fret"><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td class="twelve-fret"><div class="maru"><span>E</span></div></td>
+                            <td><div class="maru"><span>F</span></div></td>
+                            <td><div class="maru"><span class="small">F#<br>Gb</span></div></td>
+                            <td><div class="maru"><span>G</span></div></td>
+                            <td><div class="maru"><span class="small">G#<br>Ab</span></div></td>
+                            <td><div class="maru"><span>A</span></div></td>
+                            <td><div class="maru"><span class="small">A#<br>Bb</span></div></td>
+                            <td><div class="maru"><span>B</span></div></td>
+                            <td><div class="maru root"><span>C</span></div></td>
+                            <td><div class="maru"><span class="small">C#<br>Db</span></div></td>
+                            <td><div class="maru"><span>D</span></div></td>
+                            <td><div class="maru"><span class="small">D#<br>Eb</span></div></td>
+                            <td class="twenty-four-fret"><div class="maru"><span>E</span></div></td>
+                        </tr>
+                         
+                        <tr>
+                            <th></th>
+                            <th>12</th>
+                            <th></th>
+                            <th></th>
+                            <th>15</th>
+                            <th></th>
+                            <th>17</th>
+                            <th></th>
+                            <th>19</th>
+                            <th></th>
+                            <th>21</th>
+                            <th></th>
+                            <th></th>
+                            <th>24</th>
+                            <th></th>
+                            <th></th>
+                            <th>27</th>
+                            <th></th>
+                            <th>29</th>
+                            <th></th>
+                            <th>31</th>
+                            <th></th>
+                            <th>33</th>
+                            <th></th>
+                            <th></th>
+                            <th>36</th>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    <script src="main.js"></script>
+
+    
+</body>
+</html>
