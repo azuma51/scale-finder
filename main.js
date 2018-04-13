@@ -138,6 +138,16 @@ function changeTuning(handler, name=undefined) {
 
 function changeFret() {
     Settings.fret = Number($(this).val()) +1;
+    var min = Number($(this).attr('min')) +1;
+    var max = Number($(this).attr('max')) +1;
+    if (Settings.fret < min) {
+        Settings.fret = min;
+        $(this).val(Settings.fret-1);
+    }
+    else if (Settings.fret > max) {
+        Settings.fret = max;
+        $(this).val(Settings.fret-1);
+    }
     console.log('changeFret', Settings.fret);
     updateBoards();    
 }
