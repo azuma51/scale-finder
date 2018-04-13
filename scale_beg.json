@@ -26,7 +26,7 @@
             "name": "Pentatonic+α",
             "scales": [
                 {
-                    "name": "Major Pentatonic + b3 (Major Blues scale)",
+                    "name": "Major Pentatonic + b3 <small>(Major Blues scale)</small>",
                     "symbol": "",
                     "degree": ["R","2","b3","3","5","6"],
                     "cnote": ["b3"],
@@ -35,7 +35,7 @@
                     "desc-ja": "Major pentatonic + b3(blue note)"
                 },                
                 {
-                    "name": "Minor Pentatonic + b5 (Minor Blues scale)",
+                    "name": "Minor Pentatonic + b5 <small>(Minor Blues scale)</small>",
                     "symbol": "",
                     "degree": ["R","b3","4","b5","5","b7"],
                     "cnote": ["b5"],
@@ -107,6 +107,92 @@
                     "ghost": ["2","b6"],
                     "desc-en": "Locrian characteristic note b5.",
                     "desc-ja": "Locrianの特性音 b5"
+                }
+            ]
+        },
+
+        {
+            "name": "7th Triads (w/9th ghost)",
+            "scales": [
+                {
+                    "name": "Major 7 Triad",
+                    "symbol": "M7",
+                    "degree": ["R", "3", "5", "7"],
+                    "cnote":  ["3", "5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Minor 7 Triad",
+                    "symbol": "m7",
+                    "degree": ["R", "b3", "5", "b7"],
+                    "cnote": ["b3", "5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Dominant 7 Triad",
+                    "symbol": "7",
+                    "degree": ["R", "3", "5", "b7"],
+                    "cnote": ["3", "5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Half-diminished 7 Triad",
+                    "symbol": "m7(b5)",
+                    "degree": ["R", "b3", "b5", "b7"],
+                    "cnote": ["b3", "b5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Diminished 7 Triad",
+                    "symbol": "dim7",
+                    "degree": ["R", "b3", "b5", "bb7"],
+                    "cnote": ["b3", "b5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Minor major 7 Triad",
+                    "symbol": "mM7",
+                    "degree": ["R", "b3", "5", "7"],
+                    "cnote": ["b3", "5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Augmented major 7 Triad",
+                    "symbol": "augM7",
+                    "degree": ["R", "3", "#5", "7"],
+                    "cnote": ["3", "#5"],
+                    "ghost": ["9"],
+                    "desc": ""
+                },
+                {
+                    "name": "Augmented (minor) 7 Triad",
+                    "symbol": "aug7",
+                    "degree": ["R", "3", "#5", "b7"],
+                    "cnote": ["3", "#5"],
+                    "ghost": ["9"],
+                    "desc": "Non-tertian harmony chord."
+                },
+                {
+                    "name": "Diminished major 7 Triad",
+                    "symbol": "mM7(b5)",
+                    "degree": ["R", "b3", "b5", "7"],
+                    "cnote": ["b3", "b5"],
+                    "ghost": ["9"],
+                    "desc": "Non-tertian harmony chord."
+                },
+                {
+                    "name": "Dominant 7(b5) Triad",
+                    "symbol": "7(b5)",
+                    "degree": ["R", "3", "b5", "b7"],
+                    "cnote": ["3", "b5"],
+                    "ghost": ["9"],
+                    "desc": "Non-tertian harmony chord."
                 }
             ]
         },
