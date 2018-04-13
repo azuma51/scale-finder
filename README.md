@@ -24,11 +24,13 @@ Thanks.
 * add Exotic scales
 * add Pentatonic from JAZZ
 * add Reference lists
-* add Open Tunings
+* <s>add Open Tunings</s>
 * <s>css, Phone devices</s>
 * cookies, save latest status
 * idea; Piano diagram
 * idea; Paint shape (3NPS, CAGED) but...THIS IS DIFFICULTY
+* idea; Steel guitar tunings(Lap/Table 6,8,10...)
+* idea; Or Custom tuning input box...
 
 # History
 ##### r20180331 TEST-Release
