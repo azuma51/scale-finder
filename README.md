@@ -20,6 +20,7 @@ Thanks.
 
 # Todo
 * fix fret number input bug(add limit)
+* <s>add 7th Triads</s>
 * add Exotic scales
 * add Pentatonic from JAZZ
 * add Reference lists
