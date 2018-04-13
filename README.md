@@ -25,6 +25,7 @@ Thanks.
 * add Pentatonic from JAZZ
 * add Reference lists
 * add Open Tunings
+* <s>css, Phone devices</s>
 * cookies, save latest status
 * idea; Piano diagram
 * idea; Paint shape (3NPS, CAGED) but...THIS IS DIFFICULTY

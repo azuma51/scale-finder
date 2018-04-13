@@ -293,3 +293,22 @@ body :lang(ja) {
     display: none;
 }
 */
+
+@media (max-width: 736px) {
+    html { font-size: 11px; }
+    .status {
+        padding: 0px;
+        font-size: 9px;
+    }
+    .status-note {
+        width: 1.8rem;
+        font-size: 8px;
+    }
+    .diagram .maru {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    .diagram table td {
+        padding: 1px 2px;
+    }
+}
