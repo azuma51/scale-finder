@@ -5,7 +5,7 @@ You can find guitar scales and view diagram on degree/note.
 * [Scale Finder](https://azuma51.github.io/scale-finder/)
 
 
-# Please help
+# Please Help
 
 I don't have enough music theory.
 As you can see, Programming and English too.
@@ -19,18 +19,22 @@ Thanks.
 
 
 # Todo
-* fix fret number input bug(add limit)
-* <s>add 7th Triads</s>
 * add Exotic scales
 * add Pentatonic from JAZZ
 * add Reference lists
-* <s>add Open Tunings</s>
-* <s>css, Phone devices</s>
 * cookies, save latest status
 * idea; Piano diagram
 * idea; Paint shape (3NPS, CAGED) but...THIS IS DIFFICULTY
-* idea; Steel guitar tunings(Lap/Table 6,8,10...)
-* idea; Or Custom tuning input box...
+* idea; Steel guitar tunings(Lap/Table 6,8,10...) or Custom tuning input box...
 
 # History
-##### r20180331 TEST-Release
+#### r20180413
+* fix fret number input bug(add limit)
+* add 7th Triads in beginner
+* add Open Tunings
+* fix Phone devices, CSS
+* commment out design-test-elements in index.html
+* fix some tiny miss
+
+#### r20180331
+* TEST-Release

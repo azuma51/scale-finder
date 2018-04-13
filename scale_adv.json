@@ -300,7 +300,7 @@
                     "desc": "Octatonic & Symmetrical"
                 },
                 {
-                    "name": "Diminished Half-Whote",
+                    "name": "Diminished Half-Whole <small>(Combination of Diminished)</small>",
                     "symbol": "",
                     "degree": ["R","b2","b3","3","#4","5","6","b7"],
                     "desc": "Octatonic & Symmetrical."
