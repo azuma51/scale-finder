@@ -30,6 +30,7 @@
         { "name": "Regular", "notes": ["E","A","D","G","B","E"] },
         { "name": "DropD",   "notes": ["D","A","D","G","B","E"] },
         { "name": "7S-STD",  "notes": ["B","E","A","D","G","B","E"] },
+        { "name": "8S-E(Tosin Abasi)",  "notes": ["E","B","E","A","D","G","B","E"] },
         { "name": "8S-F(Meshuggah)", "notes": ["F","Bb","Eb","Ab","Db","Gb","Bb","Eb"] },
         { "name": "4S-Bass", "notes": ["E","A","D","G"] },
         { "name": "5S-Bass", "notes": ["E","A","D","G","B"] },
