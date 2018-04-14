@@ -28,6 +28,10 @@ Thanks.
 * idea; Steel guitar tunings(Lap/Table 6,8,10...) or Custom tuning input box...
 
 # History
+#### r20180415
+* fix load timing for scales json
+* add 8S-E(Tosin Abasi) in tuning
+
 #### r20180413
 * fix fret number input bug(add limit)
 * add 7th Triads in beginner
