@@ -24,7 +24,7 @@ var Scaels = {};
 //
 $(document).ready(function(){
     $.getJSON('./data.json', loadedData);
-    loadScales();
+    //loadScales();
 
     $('#Status button').click(clickStatus);
     $('#Type').change(changeType);
@@ -53,6 +53,7 @@ function loadedData(json) {
 
     setupDefault();
     setupResizeBoards();
+    loadScales();
 }
 
 function loadScales() {
